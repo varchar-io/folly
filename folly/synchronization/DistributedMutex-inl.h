@@ -1049,7 +1049,7 @@ inline void recordTimedWaiterAndClearTimedBit(
 template <typename Atomic>
 void wakeTimedWaiters(Atomic* state, bool timedWaiters) {
   if (UNLIKELY(timedWaiters)) {
-    atomic_notify_one(state);
+    folly::atomic_notify_one(state);
   }
 }
 
